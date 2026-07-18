@@ -64,9 +64,8 @@ ul li{
    max-width:1300px;
     width:100%;
     min-height:600px;
-    margin:30px auto;
+    margin:10px auto;
     display:flex;
-    padding:20px;
     padding:70px 20px;
         align-items:center
     /* border: 1px solid black; */

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Style+Script&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+
+.service-container {
+
+    width: 95%;
+    max-width: 1450px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+}
+
+.title h2 {
+    font-weight: 700;
+    color: #1d2738;
+}
+
+.title p {
+    margin-top: 8px;
+    color: #777;
+    font-size: 17px;
+}
+hr{
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e8e8e8;
+}
+
