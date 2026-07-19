@@ -140,17 +140,20 @@ hr {
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top: 10px;
     font-size: 42px;
 }
 
 .empty-cart h3 {
     margin-top: 25px;
     font-size: 30px;
+    text-align: center;
 }
 
 .empty-cart p {
     margin-top: 10px;
     color: #777;
+    text-align: center;
 }
 
 .total {
