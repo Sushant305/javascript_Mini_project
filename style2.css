@@ -343,3 +343,48 @@ hr {
         font-size: 20px;
         color: black;
 }
+.cart-row{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-items{
+    margin-top:10px;
+}
+.cart-items{
+    max-height: 180px;   /* Adjust based on the height of 3 items */
+    overflow-y: auto;
+}
+
+/* Optional: Style the scrollbar */
+.cart-items::-webkit-scrollbar{
+    width: 6px;
+}
+
+.cart-items::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 10px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover{
+    background: #555;
+}.cart-items{
+    max-height: 180px; 
+    overflow-y: auto;
+}
+
+
+.cart-items::-webkit-scrollbar{
+    width: 6px;
+}
+
+.cart-items::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 10px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover{
+    background: #555;
+}
