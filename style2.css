@@ -124,10 +124,10 @@ hr {
 
 .table-header {
     background-color: #f7f8fc;
-    display: grid;
-    grid-template-columns: 70px 1fr 100px;
-    padding: 18px;
-    font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
 }
 
 .empty-cart i {
@@ -350,15 +350,34 @@ hr {
     border-bottom: 1px solid #ddd;
 }
 
-.cart-items{
-    margin-top:10px;
-}
-.cart-items{
-    max-height: 180px;   /* Adjust based on the height of 3 items */
+.cart-items {
+    margin-top: 10px;
+    max-height: 180px;
     overflow-y: auto;
 }
 
-/* Optional: Style the scrollbar */
+.cart-items-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.cart-items-list p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.cart-items-list span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+
 .cart-items::-webkit-scrollbar{
     width: 6px;
 }
