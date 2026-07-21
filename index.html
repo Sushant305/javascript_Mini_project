@@ -151,20 +151,20 @@
             </div>
             <div class="booking-card">
                 <h2>Book Now</h2>
-                <form action="">
+                <form action="" id="booking-form">
                     <label for="">Full Name</label>
-                    <input type="text" placeholder="Enter Name">
+                    <input type="text" id="fullname" placeholder="Enter Name" required>
 
                     <div class="row">
                         <div>
                             <label for="">Email ID </label>
-                            <input type="email" placeholder="abc@gmail.com">
+                            <input type="email"  placeholder="abc@gmail.com" required>
                         </div>
                         <div>
 
                             <label>Phone Number</label>
 
-                            <input type="number" placeholder="0000000000">
+                            <input type="number" placeholder="+1234567890" required>
 
                         </div>
                     </div>
@@ -173,6 +173,8 @@
                         Book Now
 
                     </button>
+
+                    <div id="form_validation"></div>
                 </form>
             </div>
 
@@ -258,6 +260,7 @@
     </footer>
 
     <script src="./script.js"></script>
+    <script src="./Email.js"></script>
 </body>
 
 </html>

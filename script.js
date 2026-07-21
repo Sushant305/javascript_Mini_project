@@ -58,7 +58,7 @@ services.forEach((service) => {
 const addbtn = document.querySelectorAll(".add-btn");
 const cartitems = document.querySelector(".cart-items");
 const emptyCart = document.querySelector(".empty-cart");
-const totalAmoount = document.getElementById("total-amount")
+const totalAmoount = document.getElementById("total-amount");
 
 const cart = [];
 
@@ -71,26 +71,39 @@ addbtn.forEach((button, index) => {
     cart.push(service);
 
     cartitems.innerHTML += `
-            <div class="cart-items-list">
-                <h4>${service.name}</h4>
-                <span>₹${service.price}</span>
-            </div>
-        `;
+              <div class="cart-items-list">
+                  <h4>${service.name}</h4>
+                  <span>₹${service.price}</span>
+              </div>
+          `;
 
-    const total = cart.reduce((sum,items)=>{
-        return sum + items.price;
-    },0)
+    const total = cart.reduce((sum, items) => {
+      return sum + items.price;
+    }, 0);
 
-    totalAmoount.innerText = `₹${total}`
-
+    totalAmoount.innerText = `₹${total}`;
   });
 });
 
-const bookbutton = document.getElementById("book-btn")
+const form = document.querySelector("#booking-form");
+const message = document.getElementById("form_validation");
+const inputname = document.getElementById("fullname");
 
-bookbutton.addEventListener("click",(event)=>{
-    event.innerHTML="";
-    cart.length = 0;
-    totalAmoount.innerText = "₹0"
-    emptyCart.style.display= "block"; 
-})
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  cartitems.innerHTML = "";
+  cart.length = 0;
+  totalAmoount.innerText = "₹0";
+  emptyCart.style.display = "block";
+
+  const userName = inputname.value;
+
+  message.innerHTML = `
+  <p style="color:green;font-weight:bold;">
+            ${userName}, your order is submitted successfully!
+        </p>
+  `;
+
+  form.reset();
+});
