@@ -71,17 +71,19 @@ addbtn.forEach((button, index) => {
     cart.push(service);
 
     cartitems.innerHTML += `
-              <div class="cart-items-list">
-                  <h4>${service.name}</h4>
-                  <span>₹${service.price}</span>
-              </div>
-          `;
+    
+      <div class="cart-items-list">
+        <h4>${service.name}</h4>
+        <p>${service.price}</p>
+      </div>
+    `;
 
-    const total = cart.reduce((sum, items) => {
-      return sum + items.price;
-    }, 0);
+    const total = cart.reduce((sum,items)=>{
+      return sum += items.price;
+    },0)
 
-    totalAmoount.innerText = `₹${total}`;
+    totalAmoount.innerText = `₹${total}`
+
   });
 });
 
