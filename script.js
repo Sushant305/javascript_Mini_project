@@ -92,5 +92,5 @@ bookbutton.addEventListener("click",(event)=>{
     event.innerHTML="";
     cart.length = 0;
     totalAmoount.innerText = "₹0"
-    emptyCart.style.display= "block";
+    emptyCart.style.display= "block"; 
 })
