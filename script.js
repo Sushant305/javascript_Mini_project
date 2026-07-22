@@ -1,3 +1,4 @@
+emailjs.init("lyHZ4lwOClK9GRm__");
 const services = [
   {
     icon: "fa-solid fa-shirt",
@@ -116,22 +117,81 @@ function renderCart() {
 const form = document.getElementById("booking-form")
 const message = document.getElementById("form_validation")
 const inputName = document.getElementById("fullname")
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
 
-form.addEventListener("submit",(event)=>{
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  message.innerHTML = `
-    <p style="color:green;font-weight:bold;">
-      ${inputName.value}, your order is submitted successfully!
-    </p>
-  `
+  // Check HTML validation
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
 
-  services.forEach((service)=>{
-    service.isAdded = false;
-  })
+  // Get selected services
+  const addedItems = services.filter(service => service.isAdded);
 
-   renderServices();
-  renderCart();
+  // Don't allow empty bookings
+  if (addedItems.length === 0) {
+    alert("Please add at least one service.");
+    return;
+  }
 
-  form.reset();
-})
+  // Create service list
+  const serviceNames = addedItems
+    .map(service => service.name)
+    .join(", ");
+
+  // Calculate total
+  const total = addedItems.reduce((sum, service) => {
+    return sum + service.price;
+  }, 0);
+
+  // Data to send
+  const templateParams = {
+    user_name: inputName.value,
+    user_email: email.value,
+    phone: phone.value,
+    services: serviceNames,
+    total: total,
+  };
+
+  emailjs
+    .send(
+      "service_4td8he8",
+      "template_tikhqsk",
+      templateParams
+    )
+    .then(() => {
+
+      message.innerHTML = `
+        <p style="color:green;font-weight:bold;">
+          ${inputName.value}, your order has been submitted successfully.
+          A confirmation email has been sent.
+        </p>
+      `;
+
+      services.forEach((service) => {
+        service.isAdded = false;
+      });
+
+      renderServices();
+      renderCart();
+      form.reset();
+
+    })
+    .catch((error) => {
+    console.log("EmailJS Error:", error);
+
+    if (error.text) {
+        console.log("Error Text:", error.text);
+    }
+
+    if (error.status) {
+        console.log("Status:", error.status);
+    }
+
+    alert("Failed to send email.");
+});
+});

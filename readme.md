@@ -1,3 +1,7 @@
+## Note:
+This project was designed and developed by me. I used AI assistance only for integrating EmailJS, as I found the official EmailJS documentation difficult to understand and wanted guidance on the correct implementation. All other parts of the project—including the HTML structure, CSS styling, JavaScript functionality, cart logic, and overall application development—were implemented by me.
+
+
 ## 🛠️ Technologies Used
 
 - HTML5
