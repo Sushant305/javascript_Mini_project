@@ -195,3 +195,26 @@ form.addEventListener("submit", (event) => {
     alert("Failed to send email.");
 });
 });
+
+
+$(document).ready(function () {
+
+    $("a[href^='#']").click(function (e) {
+
+        e.preventDefault();
+
+        let target = $(this).attr("href");
+
+        if ($(target).length) {
+
+            let navHeight = $(".nav-baar").outerHeight();
+
+            $("html, body").animate({
+                scrollTop: $(target).offset().top - navHeight
+            }, 800);
+
+        }
+
+    });
+
+});

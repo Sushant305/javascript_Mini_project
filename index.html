@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="heading part">
+    <header class="heading-part">
         <nav class="nav-baar">
             <div class="logo">
                 <img src="./Images/logo.png" alt="logo-image">
@@ -20,10 +20,10 @@
             </div>
             <div class="nav-bar">
                 <ul>
-                    <li>Home </li>
-                    <li>Service</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
+                    <li><a href="#home">Home</a> </li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -32,7 +32,7 @@
         </nav>
     </header>
 
-    <Section class="main-section">
+    <Section class="main-section" id="home">
         <div class="text-content">
             <h2>
                 Revitalize Your<br>
@@ -46,7 +46,7 @@
                 rediscover the freshness of your clothes today!
             </p>
 
-            <button> <i class="fa-solid fa-bag-shopping"></i> Book a service today!</button>
+            <a href="#allServices"> <button > <i class="fa-solid fa-bag-shopping"></i> Book a service today!</button></a>
         </div>
         <div class="img-content">
             <img src="./Images/Side_Image.png" alt="">
@@ -72,7 +72,7 @@
         </div>
     </section>
 
-    <section class="service-container">
+    <section class="service-container" id="allServices">
 
         <div class="service-card">
             <div class="title">
@@ -183,7 +183,7 @@
     </section>
 
     <footer class="site-footer">
-        <div class="footer-features">
+        <div class="footer-features" id="service">
             <div class="feature-items">
                 <img class="feature-image" src="./Images/Premium Service.png" alt="Premium Service">
                 <h2>Premium Service</h2>
@@ -219,7 +219,7 @@
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom" id="contact">
             <div class="bottom-column logo-info">
                 <h2 class="footer-logo">
                     Logo
@@ -260,7 +260,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="./script.js"></script>
    
 </body>
